@@ -174,8 +174,8 @@ func Register(c *fiber.Ctx) error{
    Value:token,
    Expires:time.Now().Add(time.Hour*24), // 1 day
    HTTPOnly: true,
-  //  SameSite: "None",
-  //  Secure:   false,
+   SameSite: "None",
+   Secure:   false,
 
     
    
