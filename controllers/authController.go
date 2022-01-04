@@ -88,7 +88,8 @@ func Register(c *fiber.Ctx) error{
     
     FirstName:  data["first_name"].(string),
     LastName:   data["last_name"].(string),
-    Phone:int(data["phone"].(float64)),
+    //Phone:int(data["phone"].(float64)),
+    Phone:  data["phone"].(string),
     // RoleId: 1, 
     Email:  strings.TrimSpace(data["email"].(string)),
 
