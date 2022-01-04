@@ -24,8 +24,8 @@ func SendEmail(name string, useremail string, token string)  {
 	server.KeepAlive=false
 	server.ConnectTimeout=30*time.Second
 	server.SendTimeout=30*time.Second
-	//server.Encryption = mail.EncryptionSTARTTLS
-	server.Encryption = mail.EncryptionSSL
+	server.Encryption = mail.EncryptionSTARTTLS
+	//server.Encryption = mail.EncryptionSSL
 
 	smtpClient, err := server.Connect()
 	if err != nil {
