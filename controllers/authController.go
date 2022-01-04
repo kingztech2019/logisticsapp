@@ -100,7 +100,7 @@ func Register(c *fiber.Ctx) error{
   //This function triggered the verification email
  generatedToken,_:= generateToken()
  
-  //render.SendEmail(data["first_name"].(string),data["email"].(string),generatedToken)
+  render.SendEmail(data["first_name"].(string),data["email"].(string),generatedToken)
   
   user.SetPassword(data["password"].(string))
   err:=database.DB.Create(&user)
@@ -182,7 +182,7 @@ func Register(c *fiber.Ctx) error{
  }
  c.Cookie(&cookie)
    return c.JSON(fiber.Map{
-     "messsage":"success",
+     "messsage":"You have successfully login",
      
    })
   
