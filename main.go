@@ -36,5 +36,5 @@ func main() {
 //   MailChan:= make(chan models.MailData)
 //    defer close(MailChan)
 
- app.Listen(port)
+ app.Listen(":"+port)
 }
