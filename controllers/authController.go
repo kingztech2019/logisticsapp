@@ -4,7 +4,6 @@ import (
 	"crypto/rand"
 	"encoding/base64"
 	"encoding/hex"
-	"errors"
 	"fmt"
 	"log"
 	"regexp"
@@ -18,7 +17,6 @@ import (
 	"github.com/kingztech2019/9jarider/models"
 	"github.com/kingztech2019/9jarider/render"
 	"github.com/kingztech2019/9jarider/util"
-	"gorm.io/gorm"
 )
 
 //This function validate the email address
@@ -144,15 +142,15 @@ func Register(c *fiber.Ctx) error{
     
     
   }
-  var activate models.Activate
-  dataCheck:=database.DB.Where("user_id = ? AND used = ?",user.Id , 1).First(&activate)
+//   var activate models.Activate
+//   dataCheck:=database.DB.Where("user_id = ? AND used = ?",user.Id , 1).First(&activate)
  
-  if errors.Is(dataCheck.Error, gorm.ErrRecordNotFound){
-    c.Status(400)
-  return c.JSON(fiber.Map{
-   "message": "Please kindly  activate your account",
-   })
-}
+//   if errors.Is(dataCheck.Error, gorm.ErrRecordNotFound){
+//     c.Status(400)
+//   return c.JSON(fiber.Map{
+//    "message": "Please kindly  activate your account",
+//    })
+// }
 
  if err:= user.ComparePassword(data["password"]); err!=nil{
    c.Status(400)
