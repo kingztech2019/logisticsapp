@@ -18,14 +18,14 @@ func SendEmail(name string, useremail string, token string)  {
 	fmt.Println(name, useremail,token)
 	server := mail.NewSMTPClient()
 	server.Host = "smtp.gmail.com"
-	server.Port =  587
+	server.Port =  465
 	server.Username="oluwajuwonfalore"
 	server.Password = "winners2020"
 	server.KeepAlive=false
 	server.ConnectTimeout=30*time.Second
 	server.SendTimeout=30*time.Second
-	server.Encryption = mail.EncryptionSTARTTLS
-	//server.Encryption = mail.EncryptionSSL
+	//server.Encryption = mail.EncryptionSTARTTLS
+	server.Encryption = mail.EncryptionSSL
 
 	smtpClient, err := server.Connect()
 	if err != nil {
