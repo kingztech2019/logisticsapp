@@ -3,7 +3,6 @@ package routes
 import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/kingztech2019/9jarider/controllers"
-	"github.com/kingztech2019/9jarider/middlewares"
 )
 
 func Setup(app *fiber.App) {
@@ -14,7 +13,7 @@ app.Get("/api/activate", controllers.ActivateUser)
 app.Post("/api/password-reset-code", controllers.PasswordCodeConfirm)
 app.Post("/api/reset-password", controllers.ForgetPassword)
 
-app.Use(middlewares.IsAuthenticated)
+//app.Use(middlewares.IsAuthenticated)
 app.Get("/api/user", controllers.User)
 app.Post("/api/logout", controllers.Logout)
 app.Post("/api/users", controllers.CreateUser)
