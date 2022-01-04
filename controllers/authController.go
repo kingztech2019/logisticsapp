@@ -6,6 +6,7 @@ import (
 	"encoding/hex"
 	"errors"
 	"fmt"
+	"log"
 	"regexp"
 	"strconv"
 	"strings"
@@ -88,7 +89,7 @@ func Register(c *fiber.Ctx) error{
     FirstName:  data["first_name"].(string),
     LastName:   data["last_name"].(string),
     Phone:int(data["phone"].(float64)),
-    RoleId: 1, 
+    // RoleId: 1, 
     Email:  strings.TrimSpace(data["email"].(string)),
 
 
@@ -101,7 +102,10 @@ func Register(c *fiber.Ctx) error{
   render.SendEmail(data["first_name"].(string),data["email"].(string),generatedToken)
   
   user.SetPassword(data["password"].(string))
-  database.DB.Create(&user)
+  err:=database.DB.Create(&user)
+  if err != nil {
+    log.Println(err)
+  }
 
   activate:=models.Activate{
     Token:generatedToken ,

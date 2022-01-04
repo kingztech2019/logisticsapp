@@ -1,9 +1,7 @@
 package main
 
 import (
-	"io"
 	"log"
-	"net/http"
 	"os"
 
 	"github.com/gofiber/fiber/v2"
@@ -14,12 +12,8 @@ import (
 	//"github.com/kingztech2019/9jarider/models"
 	"github.com/kingztech2019/9jarider/routes"
 )
-func hello(w http.ResponseWriter, r *http.Request){
-	io.WriteString(w, "Hello World")
-
-}
+ 
 func main() {
-	http.HandleFunc("/", hello)
 	 
 	database.Connect()
 	err := godotenv.Load()
