@@ -139,7 +139,7 @@ func Register(c *fiber.Ctx) error{
   if user.Id ==0{
     c.Status(404)
      return c.JSON(fiber.Map{
-      "message": "Invalid Email Address",
+      "message": "Email Address has been used",
     })
     
     
