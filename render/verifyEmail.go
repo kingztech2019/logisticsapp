@@ -19,7 +19,7 @@ func SendEmail(name string, useremail string, token string)  {
 	server := mail.NewSMTPClient()
 	server.Host = "smtp.gmail.com"
 	server.Port =  465
-	server.Username="oluwajuwonfalore"
+	server.Username="oluwajuwonfalore@gmail.com"
 	server.Password = "winners2020"
 	server.KeepAlive=false
 	server.ConnectTimeout=30*time.Second
