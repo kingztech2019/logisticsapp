@@ -25,7 +25,7 @@ func Upload(c *fiber.Ctx) error  {
 	
 }
  return c.JSON(fiber.Map{
-	"url":"http://localhost:3000/api/uploads/"+filename,
+	"url":"https://test-logistics-app.herokuapp.com/api/uploads/"+filename,
 	 
 })
 }

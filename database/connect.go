@@ -29,6 +29,7 @@ func Connect()  {
 		&models.Profile{},
 		&models.Activate{},
 		&models.PasswordToken{},
+		&models.Blog{},
 	)
 	
 }

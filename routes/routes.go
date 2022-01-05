@@ -10,6 +10,8 @@ func Setup(app *fiber.App) {
 	
 app.Post("/api/register", controllers.Register)
 app.Post("/api/login", controllers.Login)
+app.Post("/api/create-blog", controllers.CreateBlog)
+app.Get("/api/get-blog", controllers.AllPost)
 app.Get("/api/activate", controllers.ActivateUser)
 app.Post("/api/password-reset-code", controllers.PasswordCodeConfirm)
 app.Post("/api/reset-password", controllers.ForgetPassword)
