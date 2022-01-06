@@ -12,6 +12,7 @@ app.Post("/api/register", controllers.Register)
 app.Post("/api/login", controllers.Login)
 
 app.Get("/api/get-blog", controllers.AllPost)
+app.Get("/api/get-blog/:id", controllers.DetailBlog)
 app.Get("/api/activate", controllers.ActivateUser)
 app.Post("/api/password-reset-code", controllers.PasswordCodeConfirm)
 app.Post("/api/reset-password", controllers.ForgetPassword)
@@ -28,7 +29,7 @@ app.Delete("/api/users/:id", controllers.DeleteUser)
 
 //Blog API
 app.Post("/api/create-blog", controllers.CreateBlog)
-app.Get("/api/get-blog/:id", controllers.DetailBlog)
+
 app.Get("/api/unique-blog", controllers.UniqueBlog)
 app.Delete("/api/delete-blog/:id", controllers.DeleteBlog)
 app.Put("/api/update-blog/:id", controllers.UpdateBlog)
