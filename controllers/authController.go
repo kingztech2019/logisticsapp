@@ -181,6 +181,7 @@ func Register(c *fiber.Ctx) error{
  c.Cookie(&cookie)
    return c.JSON(fiber.Map{
      "messsage":"You have successfully login",
+     "user":user,
      
    })
   
