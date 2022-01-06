@@ -25,7 +25,13 @@ app.Get("/api/users", controllers.AllUsers)
 app.Get("/api/users/:id", controllers.GetUser)
 app.Put("/api/users/:id", controllers.UpdateUser)
 app.Delete("/api/users/:id", controllers.DeleteUser)
+
+//Blog API
 app.Post("/api/create-blog", controllers.CreateBlog)
+app.Get("/api/get-blog/:id", controllers.DetailBlog)
+app.Get("/api/unique-blog", controllers.UniqueBlog)
+app.Delete("/api/delete-blog/:id", controllers.DeleteBlog)
+app.Put("/api/update-blog/:id", controllers.UpdateBlog)
 
 
 //Roles api

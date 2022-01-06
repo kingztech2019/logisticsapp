@@ -5,6 +5,7 @@ import "gorm.io/gorm"
 type Blog struct{
 	 
 	gorm.Model
+	Id uint `json:"id"`
 	Title string `json:"title"`
 	Desc  string `json:"desc"`
 	UserID uint  `json:"userid"`
