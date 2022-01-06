@@ -3,10 +3,20 @@ package controllers
 import (
 	"fmt"
 	"log"
+	"math/rand"
 	"os"
 
 	"github.com/gofiber/fiber/v2"
 )
+var letters = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
+
+func randSeq(n int) string {
+	b := make([]rune, n)
+	for i := range b {
+		b[i] = letters[rand.Intn(len(letters))]
+	}
+	return string(b)
+}
 
 func Upload(c *fiber.Ctx) error  {
 	form, err:=c.MultipartForm()
@@ -17,7 +27,7 @@ func Upload(c *fiber.Ctx) error  {
 	filename:=""
 
 	for _,file:=range files{
-		filename=file.Filename
+		filename=randSeq(5)+"-"+file.Filename
  
 		if err:=c.SaveFile(file, "./uploads/"+filename);  err!=nil{
 			return nil
